@@ -1,0 +1,43 @@
+extends base.pug 
+
+block scripts
+    script(src="/static/index.js")  
+
+block style
+    style
+         include ../static/style.css
+
+block content
+    section#introsection
+      div.item WelCome To Rahul Dance Academy
+      div.item2 Eat Sleep Dance Repeat
+
+    section#missionsection 
+      div.heading Our Mission
+      div.card 
+        h4 Dance Perfection
+        div#img
+         img(src="/static/img/1.png", alt="Not Found", srcset="")
+
+
+
+      div.card 
+        h4 Dance the Way you Like
+        div#img
+         img(src="/static/img/2.png", alt="Not Found", srcset="")
+
+      div.card 
+        h4 Expert Teaching
+        div#img
+         img(src="/static/img/3.png", alt="Not Found", srcset="")
+
+      div.heading With Guaranty
+
+
+    section#sponsersection
+      div.sponser Our Sponsers
+      div#sponsers
+          img(src="/static/img/logo1.png", alt="Sponser Image", class="spImage")
+          img(src="/static/img/logo2.png", alt="Sponser Image", class="spImage")
+          img(src="/static/img/logo3.png", alt="Sponser Image", class="spImage")
+          img(src="/static/img/logo4.png", alt="Sponser Image", class="spImage")
