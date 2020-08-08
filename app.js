@@ -4,7 +4,7 @@ const bodyparser = require("body-parser");
 
 const app = express();
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/contactDance', { useNewUrlParser: true , useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost/contactDance', { useNewUrlParser: true, useUnifiedTopology: true });
 const port = 80;
 
 
@@ -30,20 +30,26 @@ app.set('view engine', 'pug');
 app.set('/views', path.join(__dirname, 'views'));
 
 //our pug demo endpoint or path of pug file
-app.get('/',  function(req, res) {
+app.get('/', function (req, res) {
         const params = {};
         res.status(200).render('home.pug', params);
 });
 
-app.get('/contact',function(req, res){
+app.get('/contact', function (req, res) {
         const params = {};
         res.status(200).render('contact.pug', params);
 });
-app.post('/contact', function(req, res){
+
+function showAlert() {
+        alert("Hello World");
+}
+
+app.post('/contact', function (req, res) {
         var myData = new Contact(req.body);
         myData.save().then(() => {
-            res.send("Items was saved successfully");
             
+                res.redirect('/')
+
         }).catch(() => {
                 res.status(400).send("Item was not saved ");
         });
